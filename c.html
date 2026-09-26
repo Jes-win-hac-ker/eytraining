@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Card - NEX</title>
+    <style>
+        /* Core Card Styling based on your exact parameters */
+        .student-card {
+            width: 300px;
+            padding: 20px;
+            border: 3px solid black;
+            margin: 30px;
+            
+            /* My proactive additions for aesthetic completion */
+            background-color: #f4f6f8; /* A subtle, professional off-white */
+            border-radius: 12px;       /* Smooth corners, avoiding the 'stamped metal' look */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Subtle depth to lift it from the page */
+            
+            /* Typography and layout for the contents */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* A slight interactive flourish, because static cards are terribly boring */
+        .student-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .student-name {
+            margin: 0 0 8px 0;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .course-name {
+            margin: 0 0 12px 0;
+            font-size: 1rem;
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        .student-email {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .student-email:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="student-card">
+        <h2 class="student-name">NEX</h2>
+        <p class="course-name">B.Tech Engineering</p>
+        <a href="mailto:nex@procrastination.edu" class="student-email">nex@procrastination.edu</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEX | Tinkerer & Developer</title>
+    <style>
+        /* JARVIS Note: Dark mode enabled. I assumed you would prefer not to blind yourself. */
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --accent-glow: rgba(88, 166, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--bg-secondary);
+            position: sticky;
+            top: 0;
+            background: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Courier New', monospace; font-size: 1.5rem; color: var(--accent); font-weight: bold; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero { padding: 6rem 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero .typing-text {
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 1.2rem;
+            border-right: 2px solid var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent); } }
+
+        /* Sections */
+        section { padding: 4rem 0; }
+        h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--accent); border-bottom: 2px solid var(--bg-secondary); padding-bottom: 0.5rem; display: inline-block;}
+
+        /* Grid for Skills/Projects */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 4px 20px var(--accent-glow); }
+        .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+        .card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .tag { display: inline-block; background: rgba(88, 166, 255, 0.1); color: var(--accent); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; margin-top: 1rem; margin-right: 0.5rem;}
+
+        /* Footer */
+        footer { text-align: center; padding: 2rem 0; border-top: 1px solid var(--bg-secondary); color: var(--text-secondary); font-size: 0.9rem;}
+        footer a { color: var(--accent); text-decoration: none; }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links a { margin-left: 1rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">&lt;NEX /&gt;</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Hello, I'm NEX.</h1>
+            <p class="typing-text">B.Tech Student | Hardware Tinkerer | Aspiring Bug Hunter</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>// About Me</h2>
+            <p>I am a B.Tech engineering student who thrives at the intersection of hardware and software. Whether I am quantizing local LLMs, soldering ESP32 microcontrollers, or scraping by on assignments at the last possible minute, I am driven by a need to understand how things work—and occasionally, how to break them. I build web and mobile applications, and I spend my spare time hunting for vulnerabilities in bug bounty programs.</p>
+        </section>
+
+        <section id="skills">
+            <h2>// Arsenal</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Hardware & IoT</h3>
+                    <p>Tinkering with ESP32s, Arduino, and custom PCB designs. Bridging the physical and digital worlds.</p>
+                    <span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">Sensors</span>
+                </div>
+                <div class="card">
+                    <h3>AI & Local LLMs</h3>
+                    <p>Deploying and fine-tuning local language models. Exploring the boundaries of edge AI and on-device inference.</p>
+                    <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Ollama</span>
+                </div>
+                <div class="card">
+                    <h3>Web & Mobile Dev</h3>
+                    <p>Building responsive web apps and mobile interfaces. From frontend aesthetics to backend logic.</p>
+                    <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Flutter</span>
+                </div>
+                <div class="card">
+                    <h3>Security & Bug Bounty</h3>
+                    <p>Actively participating in bug bounty programs. Analyzing web vulnerabilities and reverse engineering.</p>
+                    <span class="tag">OWASP</span><span class="tag">Burp Suite</span><span class="tag">Recon</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>// Deployed Systems</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Project Alpha (ESP32)</h3>
+                    <p>An IoT environmental monitor that actually works 90% of the time. The other 10% is just a loose wire.</p>
+                    <span class="tag">IoT</span><span class="tag">C++</span>
+                </div>
+                <div class="card">
+                    <h3>Local AI Assistant</h3>
+                    <p>A custom pipeline running a quantized LLM locally to automate my daily tasks and answer my procrastination-induced questions.</p>
+                    <span class="tag">AI</span><span class="tag">Python</span>
+                </div>
+                <div class="card">
+                    <h3>Web App Prototype</h3>
+                    <p>A full-stack web application built in 48 hours. Yes, it was due in 48 hours. No, I do not recommend this workflow.</p>
+                    <span class="tag">Web</span><span class="tag">Fullstack</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>Initiate communication: <a href="mailto:nex@example.com">nex@example.com</a> | <a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">Compiled with caffeine and impending deadlines. &copy; 2026 NEX.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JARVIS Note: A simple script to ensure smooth scrolling, because navigating abruptly is uncivilized.
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
